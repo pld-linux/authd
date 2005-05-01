@@ -8,6 +8,7 @@ Group:		Networking/Daemons
 Source0:	%{name}-%{version}.tar.gz
 BuildRequires:	openssl-devel
 BuildRequires:	sed >= 4.0
+BuildRequires:	missing-user-check-post-scriptlet
 Provides:	pidentd = 3.2
 Obsoletes:	pidentd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,10 +50,12 @@ rm -rf $RPM_BUILD_ROOT
 %post
 # TODO: standard useradd sequence
 #/usr/sbin/adduser -s /sbin/nologin -r ident 2>/dev/null || true
-/usr/bin/openssl rand -base64 -out %{_sysconfdir}/ident.key 32
-echo CHANGE THE LINE ABOVE TO A PASSPHRASE >> %{_sysconfdir}/ident.key
-/bin/chown ident:ident %{_sysconfdir}/ident.key
-chmod o-rw %{_sysconfdir}/ident.key
+if [ "$1" = 1 ]; then
+	/usr/bin/openssl rand -base64 -out %{_sysconfdir}/ident.key 32
+	echo CHANGE THE LINE ABOVE TO A PASSPHRASE >> %{_sysconfdir}/ident.key
+	/bin/chown ident:ident %{_sysconfdir}/ident.key
+	chmod o-rw %{_sysconfdir}/ident.key
+fi
 
 %files -f authd.lang
 %defattr(644,root,root,755)
