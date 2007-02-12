@@ -1,5 +1,5 @@
 Summary:	A RFC 1413 ident protocol daemon
-Summary(pl):	Demon protoko≥u ident (RFC 1413)
+Summary(pl.UTF-8):   Demon protoko≈Çu ident (RFC 1413)
 Name:		authd
 Version:	1.4.1
 Release:	1.4
@@ -18,10 +18,10 @@ authd is a small and fast RFC 1413 ident protocol daemon with both
 xinetd server and interactive modes that supports IPv6 and IPv4 as
 well as the more popular features of pidentd.
 
-%description -l pl
-authd to ma≥y i szybki protoko≥u demon protoko≥u ident (RFC 1413) z
-trybami xinetd i interaktywnym obs≥uguj±cy IPv6 i IPv4, a takøe
-bardziej popularne moøliwo∂ci pidentd.
+%description -l pl.UTF-8
+authd to ma≈Çy i szybki protoko≈Çu demon protoko≈Çu ident (RFC 1413) z
+trybami xinetd i interaktywnym obs≈ÇugujƒÖcy IPv6 i IPv4, a tak≈ºe
+bardziej popularne mo≈ºliwo≈õci pidentd.
 
 %prep
 %setup -q
