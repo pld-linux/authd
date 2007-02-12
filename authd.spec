@@ -1,5 +1,5 @@
 Summary:	A RFC 1413 ident protocol daemon
-Summary(pl.UTF-8):   Demon protokołu ident (RFC 1413)
+Summary(pl.UTF-8):	Demon protokołu ident (RFC 1413)
 Name:		authd
 Version:	1.4.1
 Release:	1.4
